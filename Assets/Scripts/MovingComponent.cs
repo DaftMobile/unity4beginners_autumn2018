@@ -4,8 +4,7 @@ using UnityEngine;
 public class MovingComponent : MonoBehaviour
 {
 	[SerializeField] private float shipSpeedPerSecond;
-	
-	
+		
 	private Transform mytranTransform;
 	private ExampleScript exampleScript;
 	private IInput input;
