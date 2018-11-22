@@ -4,7 +4,15 @@
     <e p="C:\Users\SzMuRy\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_DaftMobileAcademuUnity.-427083015.00" t="ExcludeRecursive" />
     <e p="D:\Work\projects\DaftMobileAcademuUnity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets\PracaDomowa" t="Include">
+        <e p="ChearingCrowdManager.cs" t="Include" />
+        <e p="ChearingCrowdTurn360.cs" t="Include" />
+        <e p="IChearingCrowd.cs" t="Include" />
+      </e>
       <e p="Assets\Scripts" t="Include">
+        <e p="Creators" t="Include">
+          <e p="AsteroidCreator.cs" t="Include" />
+        </e>
         <e p="Examplescript.cs" t="Include" />
         <e p="Initialization" t="Include">
           <e p="Initiator.cs" t="Include" />
