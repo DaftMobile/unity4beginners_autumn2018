@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Remoting.Messaging;
-using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class Initiator : MonoBehaviour
@@ -12,6 +10,7 @@ public class Initiator : MonoBehaviour
     [SerializeField] private float asteroidSpawnPointX;
     [SerializeField] private float asteroidSpawnPointY;
     [SerializeField] private float asteroidSpawnDeley;
+    [SerializeField] private int asteroidPoolsize;
     [SerializeField] private GameObject asteroidPrefab;
     
     [SerializeField] private AsteroidCreator asteroidCreator;
@@ -21,8 +20,10 @@ public class Initiator : MonoBehaviour
 
     private void Awake()
     {
+        IPrefabPool asteroidPool = new PrefabPool(asteroidPoolsize, asteroidPrefab);
+        
         asteroidCreator.Initialize(asteroidsSpeedMin, asteroidsSpeedMax,
-            asteroidSpawnPointX, asteroidSpawnPointY, asteroidSpawnDeley, asteroidPrefab);
+            asteroidSpawnPointX, asteroidSpawnPointY, asteroidSpawnDeley, asteroidPool);
         
         for (int i = 0; i < ship.Count; i++)
         {

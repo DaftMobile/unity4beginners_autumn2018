@@ -6,7 +6,6 @@ public class MovingComponent : MonoBehaviour
 	[SerializeField] private float shipSpeedPerSecond;
 		
 	private Transform mytranTransform;
-	private ExampleScript exampleScript;
 	private IInput input;
 
 	public void Initialize(float speed, IInput input)
@@ -18,8 +17,6 @@ public class MovingComponent : MonoBehaviour
 	private void Start()
 	{
 		mytranTransform = transform;
-		exampleScript = gameObject.GetComponent<ExampleScript>();
-		exampleScript.enabled = false;
 	}
 	// Update is called once per frame
 	void Update()

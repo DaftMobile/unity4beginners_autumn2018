@@ -8,16 +8,25 @@
         <e p="ChearingCrowdManager.cs" t="Include" />
         <e p="ChearingCrowdTurn360.cs" t="Include" />
         <e p="IChearingCrowd.cs" t="Include" />
+        <e p="PracaDomowa2.cs" t="Include" />
       </e>
       <e p="Assets\Scripts" t="Include">
+        <e p="Asteroid" t="Include">
+          <e p="AsteroidColider.cs" t="Include" />
+          <e p="IAsteroidColider.cs" t="Include" />
+        </e>
         <e p="Creators" t="Include">
           <e p="AsteroidCreator.cs" t="Include" />
+          <e p="IPrefabPool.cs" t="Include" />
+          <e p="PrefabPool.cs" t="Include" />
         </e>
-        <e p="Examplescript.cs" t="Include" />
         <e p="Initialization" t="Include">
           <e p="Initiator.cs" t="Include" />
         </e>
         <e p="MovingComponent.cs" t="Include" />
+        <e p="ShipComponents" t="Include">
+          <e p="ShipCollisionDetector.cs" t="Include" />
+        </e>
         <e p="Wrapper" t="Include">
           <e p="IInput.cs" t="Include" />
           <e p="InputAdapter.cs" t="Include" />

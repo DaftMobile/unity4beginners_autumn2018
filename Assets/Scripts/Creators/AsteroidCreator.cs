@@ -10,26 +10,26 @@ public class AsteroidCreator : MonoBehaviour
     private float spawnPointX;
     private float spawnPointY;
     private float asteroidSpawnDelay;
-    private GameObject asteroidPrefab;
     private float time = 0f;
+    private IPrefabPool pool;
     
     
     public void Initialize(float minSpeed, float maxSpeed, float spawnPointX, float spawnPointY,
-        float asteroidSpawnDelay ,GameObject asteroidPrefab)
+        float asteroidSpawnDelay , IPrefabPool pool)
     {
         this.minSpeed = minSpeed;
         this.maxSpeed = maxSpeed;
         this.spawnPointX = spawnPointX;
         this.spawnPointY = spawnPointY;
-        this.asteroidPrefab = asteroidPrefab;
         this.asteroidSpawnDelay = asteroidSpawnDelay;
+        this.pool = pool;
     }
 
     private void Update()
     {
         if (time >= asteroidSpawnDelay)
-        {
-            CreateAsteroid();
+        {          
+            InitializeAsteroid();
             time = 0;
         }
         else
@@ -38,13 +38,18 @@ public class AsteroidCreator : MonoBehaviour
         }
     }
 
-    public void CreateAsteroid()
+    public void InitializeAsteroid()
     {
-        GameObject asteroid = Instantiate(asteroidPrefab, new Vector3(spawnPointX, RandomYPosition(), 0),
-            asteroidPrefab.transform.rotation, transform);
+        GameObject asteroid = pool.Get();
+        asteroid.transform.position = new Vector3(spawnPointX, RandomYPosition(), 0);
+        asteroid.transform.parent = transform;
+        
         MovingComponent moving = asteroid.GetComponent<MovingComponent>();
         moving.Initialize(RandomSpeed(), new LeftInputAdapter());
         moving.StartCoroutine(WaitForDestruction(asteroid));
+
+        IAsteroidColider asteroidColider = asteroid.GetComponent<IAsteroidColider>();
+        asteroidColider.SetCollisionCallback(ReturnToPool);
     }
 
     private float RandomSpeed()
@@ -63,8 +68,12 @@ public class AsteroidCreator : MonoBehaviour
         {
             yield return null;
         }
-        GameObject.Destroy(asteroid);
+        ReturnToPool(asteroid);
     }
-    
-    
-}
+
+    private void ReturnToPool(GameObject asteroid)
+    {
+        pool.Return(asteroid);
+    }
+}    
+
