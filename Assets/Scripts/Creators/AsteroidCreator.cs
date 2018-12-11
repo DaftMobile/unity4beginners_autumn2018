@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class AsteroidCreator : MonoBehaviour
@@ -28,7 +27,7 @@ public class AsteroidCreator : MonoBehaviour
     private void Update()
     {
         if (time >= asteroidSpawnDelay)
-        {          
+        {   
             InitializeAsteroid();
             time = 0;
         }
