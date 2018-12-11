@@ -3,6 +3,7 @@
   <component name="ContentModelStore">
     <e p="C:\Users\SzMuRy\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_DaftMobileAcademuUnity.-427083015.00" t="ExcludeRecursive" />
     <e p="D:\Work\projects\DaftMobileAcademuUnity" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets\PracaDomowa" t="Include">
         <e p="ChearingCrowdManager.cs" t="Include" />
@@ -17,11 +18,21 @@
         </e>
         <e p="Creators" t="Include">
           <e p="AsteroidCreator.cs" t="Include" />
+          <e p="BrokenPrefabPool.cs" t="Include" />
           <e p="IPrefabPool.cs" t="Include" />
           <e p="PrefabPool.cs" t="Include" />
         </e>
+        <e p="Editor" t="Include">
+          <e p="Class1.cs" t="Include" />
+        </e>
+        <e p="GameEnding.cs" t="Include" />
+        <e p="iGameEnding.cs" t="Include" />
         <e p="Initialization" t="Include">
           <e p="Initiator.cs" t="Include" />
+        </e>
+        <e p="Life" t="Include">
+          <e p="ILifeManager.cs" t="Include" />
+          <e p="LifeManager.cs" t="Include" />
         </e>
         <e p="MovingComponent.cs" t="Include" />
         <e p="ShipComponents" t="Include">

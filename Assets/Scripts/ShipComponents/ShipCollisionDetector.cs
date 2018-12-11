@@ -1,14 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ShipCollisionDetector : MonoBehaviour
 {
+    private Action<int> OnCollision;
+
+    public void Initialize(Action<int> onCollision)
+    {
+        OnCollision = onCollision;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         IAsteroidColider collider = other.GetComponent<IAsteroidColider>();
         if (collider != null)
         {
-            Debug.Log("trigger entere " + collider.Damage() );
             collider.OnCollision();
+            OnCollision.Invoke(collider.Damage());
         }
         
     }
